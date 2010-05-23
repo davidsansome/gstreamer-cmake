@@ -37,3 +37,9 @@ target_link_libraries(gstbase-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
+
+install(TARGETS gstbase-${GST_MAJORMINOR}
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+install(FILES ${HEADERS} DESTINATION include/gst/base)

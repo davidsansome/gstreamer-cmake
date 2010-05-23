@@ -70,6 +70,12 @@ macro(add_glib_enumtypes outfiles name)
   list(APPEND ${outfiles} "${CMAKE_CURRENT_BINARY_DIR}/${name}.c")
 endmacro(add_glib_enumtypes)
 
+macro(install_plugin target)
+  install(TARGETS ${target}
+    LIBRARY DESTINATION lib/gstreamer-${GST_MAJORMINOR}
+    RUNTIME DESTINATION lib/gstreamer-${GST_MAJORMINOR}
+  )
+endmacro(install_plugin)
 
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")

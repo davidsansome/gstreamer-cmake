@@ -15,3 +15,7 @@ target_link_libraries(gst-plugin-scanner
   ${GOBJECT_LIBRARIES}
   ${GMODULE_LIBRARIES}
 )
+
+install(TARGETS gst-plugin-scanner
+  RUNTIME DESTINATION lib/gstreamer${GST_MAJORMINOR}
+)

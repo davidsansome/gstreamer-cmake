@@ -24,3 +24,5 @@ target_link_libraries(gstcoreindexers
   gstreamer-${GST_MAJORMINOR}
   ${GST_FILEINDEX_LIBS}
 )
+
+install_plugin(gstcoreindexers)

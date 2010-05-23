@@ -52,4 +52,3 @@ add_subdirectory(libs/gst/net)
 add_subdirectory(plugins/elements)
 add_subdirectory(plugins/indexers)
 add_subdirectory(tools)
-

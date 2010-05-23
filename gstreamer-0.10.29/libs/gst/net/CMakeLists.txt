@@ -22,3 +22,9 @@ target_link_libraries(gstnet-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
+
+install(TARGETS gstnet-${GST_MAJORMINOR}
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+install(FILES ${HEADERS} DESTINATION include/gst/net)

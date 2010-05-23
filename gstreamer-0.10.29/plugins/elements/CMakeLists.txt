@@ -47,3 +47,5 @@ target_link_libraries(gstcoreelements
   gstreamer-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
+
+install_plugin(gstcoreelements)
