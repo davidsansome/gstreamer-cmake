@@ -4,6 +4,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/parse)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/parse)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/parse)
 
 add_definitions(-DG_LOG_DOMAIN=g_log_domain_gstreamer)
 
