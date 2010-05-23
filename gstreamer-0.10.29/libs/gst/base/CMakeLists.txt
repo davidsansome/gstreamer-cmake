@@ -38,8 +38,5 @@ target_link_libraries(gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 
-install(TARGETS gstbase-${GST_MAJORMINOR}
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-install(FILES ${HEADERS} DESTINATION include/gst/base)
+install_lib(gstbase)
+install_headers(gst/base ${HEADERS})

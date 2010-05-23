@@ -27,8 +27,5 @@ target_link_libraries(gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 
-install(TARGETS gstcontroller-${GST_MAJORMINOR}
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-install(FILES ${HEADERS} DESTINATION include/gst/controller)
+install_lib(gstcontroller)
+install_headers(gst/controller ${HEADERS})

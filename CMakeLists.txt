@@ -77,6 +77,17 @@ macro(install_plugin target)
   )
 endmacro(install_plugin)
 
+macro(install_lib target)
+  install(TARGETS ${target}-${GST_MAJORMINOR}
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+  )
+endmacro(install_lib)
+
+macro(install_headers dir)
+  install(FILES ${ARGN} DESTINATION include/gstreamer-${GST_MAJORMINOR}/${dir})
+endmacro(install_headers)
+
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DNDEBUG)
@@ -85,3 +96,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
 
 add_subdirectory(gstreamer-0.10.29)
+#add_subdirectory(gst-plugins-base-0.10.29)

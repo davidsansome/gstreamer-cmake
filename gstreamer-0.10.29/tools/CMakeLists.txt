@@ -11,13 +11,17 @@ function(add_versioned_executable name source)
     ${GOBJECT_LIBRARIES}
     ${GMODULE_LIBRARIES}
   )
-  
+
   add_executable(gst-${name} gst-run.c)
   target_link_libraries(gst-${name}
     gstreamer-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${GOBJECT_LIBRARIES}
     ${GMODULE_LIBRARIES}
+  )
+
+  install(TARGETS gst-${name}-${GST_MAJORMINOR} gst-${name}
+    RUNTIME DESTINATION bin
   )
 endfunction(add_versioned_executable)
 

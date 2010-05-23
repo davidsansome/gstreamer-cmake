@@ -156,8 +156,5 @@ target_link_libraries(gstreamer-${GST_MAJORMINOR}
   ${LIBXML_LIBRARIES}
 )
 
-install(TARGETS gstreamer-${GST_MAJORMINOR}
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-install(FILES ${HEADERS} DESTINATION include/gst)
+install_lib(gstreamer)
+install_headers(gst ${HEADERS})

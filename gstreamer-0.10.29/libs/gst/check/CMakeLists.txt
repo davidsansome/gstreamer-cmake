@@ -28,8 +28,5 @@ target_link_libraries(gstcheck-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 
-install(TARGETS gstcheck-${GST_MAJORMINOR}
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-install(FILES ${HEADERS} DESTINATION include/gst/check)
+install_lib(gstcheck)
+install_headers(gst/check ${HEADERS})
