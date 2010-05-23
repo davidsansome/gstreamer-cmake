@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 2.6)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/parse)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
-include_directories(${GLIB_INCLUDE_DIRS})
-include_directories(${LIBXML_INCLUDE_DIRS})
+include_directories(${CMAKE_CURRENT_BINARY_DIR}/parse)
+
+add_definitions(-DG_LOG_DOMAIN=g_log_domain_gstreamer)
 
 # Optional sources
 if (NOT ${GST_DISABLE_LOADSAVE})
@@ -18,7 +20,17 @@ if (NOT ${GST_DISABLE_TRACE})
   set(GST_TRACE_SRC gsttrace.c)
 endif (NOT ${GST_DISABLE_TRACE})
 
-# TODO: parse
+BISON_TARGET(gstparse-parser
+  parse/grammar.y
+  ${CMAKE_CURRENT_BINARY_DIR}/grammar.tab.c
+  COMPILE_FLAGS -p_gst_parse_yy
+)
+FLEX_TARGET(gstparse-lexer
+  parse/parse.l
+  ${CMAKE_CURRENT_BINARY_DIR}/lex._gst_parse_yy.c
+  COMPILE_FLAGS -P_gst_parse_yy
+)
+ADD_FLEX_BISON_DEPENDENCY(gstparse-lexer gstparse-parser)
 
 set(SOURCES
   gst.c
@@ -74,6 +86,8 @@ set(SOURCES
   gstparse.c
   ${GST_REGISTRY_SRC}
   ${GST_LOADSAVE_SRC}
+  ${BISON_gstparse-parser_OUTPUTS}
+  ${FLEX_gstparse-lexer_OUTPUTS}
 )
 
 set(HEADERS

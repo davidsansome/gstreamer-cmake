@@ -17,7 +17,12 @@ set(GST_DISABLE_PLUGIN 0 CACHE BOOL "Disable plugins")
 
 include(FindPkgConfig)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
+pkg_check_modules(GOBJECT REQUIRED gobject-2.0)
+pkg_check_modules(GMODULE REQUIRED gmodule-2.0)
 pkg_check_modules(LIBXML libxml-2.0)
+
+find_package(BISON)
+find_package(FLEX)
 
 find_program(GLIB_MKENUMS glib-mkenums)
 find_program(GLIB_GENMARSHAL glib-genmarshal)
