@@ -33,8 +33,24 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/config.h
 )
 
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/_stdint.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/_stdint.h
+)
+
 #add_subdirectory(gst/adder)
 add_subdirectory(gst-libs/gst/app)
 add_subdirectory(gst-libs/gst/audio)
+add_subdirectory(gst-libs/gst/cdda)
+add_subdirectory(gst-libs/gst/fft)
+add_subdirectory(gst-libs/gst/floatcast)
 add_subdirectory(gst-libs/gst/interfaces)
+add_subdirectory(gst-libs/gst/netbuffer)
+add_subdirectory(gst-libs/gst/pbutils)
+add_subdirectory(gst-libs/gst/riff)
+add_subdirectory(gst-libs/gst/rtp)
+add_subdirectory(gst-libs/gst/rtsp)
+add_subdirectory(gst-libs/gst/sdp)
+add_subdirectory(gst-libs/gst/tag)
+add_subdirectory(gst-libs/gst/video)
 

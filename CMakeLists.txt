@@ -35,6 +35,5 @@ if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DQT_NO_DEBUG_OUTPUT)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
-
 add_subdirectory(gstreamer-0.10.29)
 add_subdirectory(gst-plugins-base-0.10.29)
