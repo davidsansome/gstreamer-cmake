@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
+# Things you can change
 set(GST_LICENSE "LGPL")
 set(GST_VERSION_MAJOR 0)
 set(GST_VERSION_MINOR 10)
@@ -21,7 +22,12 @@ set(DEFAULT_VIDEOSINK "autovideosink" CACHE STRING "Default video sink")
 set(DEFAULT_VIDEOSRC "v4l2src" CACHE STRING "Default video source")
 set(DEFAULT_VISUALISER "goom" CACHE STRING "Default visualiser")
 
-# Dependencies
+# Helpers
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
+include(GLibHelpers)
+include(GstMacros)
+
+# Dependencies that are required by all packages
 include(FindPkgConfig)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
 pkg_check_modules(GOBJECT REQUIRED gobject-2.0)
@@ -32,16 +38,20 @@ pkg_check_modules(LIBXML libxml-2.0)
 find_package(BISON)
 find_package(FLEX)
 
-# Helpers
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
-include(GLibHelpers)
-include(GstMacros)
-
+# Release mode
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DNDEBUG)
   add_definitions(-DQT_NO_DEBUG_OUTPUT)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
+# Useful variables for autotools compat.
+if (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
+  set(HAVE_CPU_X86_64 1)
+else (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
+  set(HAVE_CPU_I386 1)
+endif (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
+
+# These lists are appended to by GstMacros
 set(PLUGINS_FOUND "" CACHE INTERNAL foo)
 set(PLUGINS_NOT_FOUND "" CACHE INTERNAL foo)
 
@@ -49,5 +59,6 @@ add_subdirectory(gstreamer-0.10.29)
 add_subdirectory(gst-plugins-base-0.10.29)
 add_subdirectory(gst-plugins-good-0.10.22)
 add_subdirectory(gst-plugins-ugly-0.10.14)
+add_subdirectory(gst-plugins-bad-0.10.18)
 
 show_plugin_summary()
