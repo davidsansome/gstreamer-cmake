@@ -36,7 +36,7 @@ set(HEADERS
 )
 
 add_glib_marshal(SOURCES interfaces-marshal gst_interfaces_marshal gst_private.h)
-add_glib_enumtypes(SOURCES interfaces-enumtypes ${HEADERS})
+add_glib_enumtypes(SOURCES interfaces-enumtypes GST_INTERFACES ${HEADERS})
 
 add_library(gstinterfaces-${GST_MAJORMINOR} SHARED ${SOURCES})
 

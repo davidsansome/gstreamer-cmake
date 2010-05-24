@@ -34,7 +34,7 @@ set(ENUM_HEADERS
   gstringbuffer.h
 )
 
-add_glib_enumtypes(SOURCES audio-enumtypes ${ENUM_HEADERS})
+add_glib_enumtypes(SOURCES audio-enumtypes GST_AUDIO ${ENUM_HEADERS})
 
 add_library(gstaudio-${GST_MAJORMINOR} SHARED ${SOURCES})
 

@@ -15,6 +15,7 @@ set(GST_DISABLE_REGISTRY 0 CACHE BOOL "Disable registry")
 set(GST_DISABLE_XML 0 CACHE BOOL "Disable xml")
 set(GST_DISABLE_PLUGIN 0 CACHE BOOL "Disable plugins")
 
+# Dependencies
 include(FindPkgConfig)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
 pkg_check_modules(GOBJECT REQUIRED gobject-2.0)
@@ -24,96 +25,10 @@ pkg_check_modules(LIBXML libxml-2.0)
 find_package(BISON)
 find_package(FLEX)
 
-find_program(GLIB_MKENUMS glib-mkenums)
-find_program(GLIB_GENMARSHAL glib-genmarshal)
-
-macro(add_glib_marshal outfiles name prefix otherinclude)
-  add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-    COMMAND ${GLIB_GENMARSHAL} --header "--prefix=${prefix}"
-            "${CMAKE_CURRENT_SOURCE_DIR}/${name}.list"
-            > "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-    DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${name}.list"
-  )
-  add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    COMMAND echo "\\#include \\\"${otherinclude}\\\"" > "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    COMMAND echo "\\#include \\\"glib-object.h\\\"" >> "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    COMMAND echo "\\#include \\\"${name}.h\\\"" >> "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    COMMAND ${GLIB_GENMARSHAL} --body "--prefix=${prefix}"
-            "${CMAKE_CURRENT_SOURCE_DIR}/${name}.list"
-            >> "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/${name}.list"
-            "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-  )
-  list(APPEND ${outfiles} "${CMAKE_CURRENT_BINARY_DIR}/${name}.c")
-endmacro(add_glib_marshal)
-
-macro(add_glib_enumtypes outfiles name)
-  add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-    COMMAND ${GLIB_MKENUMS}
-            --template "${CMAKE_CURRENT_SOURCE_DIR}/${name}.h.template"
-            ${ARGN} > "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DEPENDS ${ARGN} "${CMAKE_CURRENT_SOURCE_DIR}/${name}.h.template"
-  )
-  add_custom_command(
-    OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    COMMAND ${GLIB_MKENUMS}
-            --template "${CMAKE_CURRENT_SOURCE_DIR}/${name}.c.template"
-            ${ARGN} > "${CMAKE_CURRENT_BINARY_DIR}/${name}.c"
-    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    DEPENDS ${ARGN} "${CMAKE_CURRENT_SOURCE_DIR}/${name}.c.template"
-            "${CMAKE_CURRENT_BINARY_DIR}/${name}.h"
-  )
-  list(APPEND ${outfiles} "${CMAKE_CURRENT_BINARY_DIR}/${name}.c")
-endmacro(add_glib_enumtypes)
-
-macro(install_plugin target)
-  install(TARGETS ${target}
-    LIBRARY DESTINATION lib/gstreamer-${GST_MAJORMINOR}
-    RUNTIME DESTINATION lib/gstreamer-${GST_MAJORMINOR}
-  )
-endmacro(install_plugin)
-
-macro(install_lib target)
-  install(TARGETS ${target}-${GST_MAJORMINOR}
-    LIBRARY DESTINATION lib
-    RUNTIME DESTINATION bin
-  )
-endmacro(install_lib)
-
-macro(install_headers dir)
-  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
-  install(FILES ${ARGN} DESTINATION ${fulldir})
-  foreach(file ${ARGN})
-    configure_file(${file} ${CMAKE_BINARY_DIR}/${fulldir}/${file} COPY_ONLY)
-  endforeach(file)
-endmacro(install_headers)
-
-macro(add_gen_headers outfiles dir)
-  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
-  foreach(file ${ARGN})
-    add_custom_command(
-      OUTPUT "${CMAKE_BINARY_DIR}/${fulldir}/${file}"
-      COMMAND ${CMAKE_COMMAND} -E copy
-          "${CMAKE_CURRENT_BINARY_DIR}/${file}"
-          "${CMAKE_BINARY_DIR}/${fulldir}/${file}"
-      DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/${file}"
-    )
-    list(APPEND ${outfiles} "${CMAKE_BINARY_DIR}/${fulldir}/${file}")
-  endforeach(file)
-endmacro(add_gen_headers)
-
-macro(install_gen_headers outfiles dir)
-  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
-  foreach(file ${ARGN})
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${file}
-      DESTINATION include/gstreamer-${GST_MAJORMINOR}/${dir})
-  endforeach(file)
-endmacro(install_gen_headers)
-
+# Helpers
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
+include(GLibHelpers)
+include(GstMacros)
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DNDEBUG)
