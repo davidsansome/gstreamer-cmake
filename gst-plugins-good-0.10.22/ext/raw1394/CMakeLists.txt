@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-check_plugin_deps(1394 RAW1394_FOUND LIBIEC61883_FOUND)
+check_plugin_deps(good 1394 RAW1394_FOUND LIBIEC61883_FOUND)
 if (${PLUGIN_1394_FOUND})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})

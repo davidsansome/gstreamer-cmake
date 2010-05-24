@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-check_plugin_deps(flac FLAC_FOUND)
+check_plugin_deps(good flac FLAC_FOUND)
 if (${PLUGIN_flac_FOUND})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})

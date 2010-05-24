@@ -42,6 +42,12 @@ if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DQT_NO_DEBUG_OUTPUT)
 endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
+set(PLUGINS_FOUND "" CACHE INTERNAL foo)
+set(PLUGINS_NOT_FOUND "" CACHE INTERNAL foo)
+
 add_subdirectory(gstreamer-0.10.29)
 add_subdirectory(gst-plugins-base-0.10.29)
 add_subdirectory(gst-plugins-good-0.10.22)
+add_subdirectory(gst-plugins-ugly-0.10.14)
+
+show_plugin_summary()

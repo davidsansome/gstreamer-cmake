@@ -76,9 +76,6 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/_stdint.h
 )
 
-set(PLUGINS_FOUND "" CACHE INTERNAL foo)
-set(PLUGINS_NOT_FOUND "" CACHE INTERNAL foo)
-
 add_subdirectory(gst/alpha)
 add_subdirectory(gst/apetag)
 add_subdirectory(gst/audiofx)
@@ -138,6 +135,4 @@ add_subdirectory(ext/soup)
 add_subdirectory(ext/speex)
 add_subdirectory(ext/taglib)
 add_subdirectory(ext/wavpack)
-
-show_plugin_summary()
 

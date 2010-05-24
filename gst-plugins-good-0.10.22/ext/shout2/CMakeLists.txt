@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-check_plugin_deps(shout2 SHOUT2_FOUND)
+check_plugin_deps(good shout2 SHOUT2_FOUND)
 if (${PLUGIN_shout2_FOUND})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})

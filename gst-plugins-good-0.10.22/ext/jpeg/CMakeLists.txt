@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-check_plugin_deps(jpeg JPEG_LIBRARIES JPEG_INCLUDE_DIRS)
+check_plugin_deps(good jpeg JPEG_LIBRARIES JPEG_INCLUDE_DIRS)
 if (${PLUGIN_jpeg_FOUND})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
