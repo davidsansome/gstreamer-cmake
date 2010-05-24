@@ -17,19 +17,19 @@
 // #undef CDPARANOIA_HEADERS_IN_DIR
 
 /* Default audio sink */
-// #undef DEFAULT_AUDIOSINK
+#define DEFAULT_AUDIOSINK "${DEFAULT_AUDIOSINK}"
 
 /* Default audio source */
-// #undef DEFAULT_AUDIOSRC
+#define DEFAULT_AUDIOSRC "${DEFAULT_AUDIOSRC}"
 
 /* Default video sink */
-// #undef DEFAULT_VIDEOSINK
+#define DEFAULT_VIDEOSINK "${DEFAULT_VIDEOSINK}"
 
 /* Default video source */
-// #undef DEFAULT_VIDEOSRC
+#define DEFAULT_VIDEOSRC "${DEFAULT_VIDEOSRC}"
 
 /* Default visualizer */
-// #undef DEFAULT_VISUALIZER
+#define DEFAULT_VISUALIZER "${DEFAULT_VISUALIZER}"
 
 /* Define to 1 if translation of program messages to the user's native
    language is requested. */

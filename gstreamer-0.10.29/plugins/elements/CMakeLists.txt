@@ -45,6 +45,7 @@ add_library(gstcoreelements MODULE ${SOURCES})
 
 target_link_libraries(gstcoreelements
   gstreamer-${GST_MAJORMINOR}
+  gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

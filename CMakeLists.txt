@@ -20,6 +20,7 @@ include(FindPkgConfig)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
 pkg_check_modules(GOBJECT REQUIRED gobject-2.0)
 pkg_check_modules(GMODULE REQUIRED gmodule-2.0)
+pkg_check_modules(LIBOIL REQUIRED liboil-0.3)
 pkg_check_modules(LIBXML libxml-2.0)
 
 find_package(BISON)
