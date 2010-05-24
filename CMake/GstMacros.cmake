@@ -41,3 +41,15 @@ macro(install_gen_headers dir)
       DESTINATION include/gstreamer-${GST_MAJORMINOR}/${dir})
   endforeach(file)
 endmacro(install_gen_headers)
+
+macro(configure_pkgconfig name)
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/${name}.pc.in
+    ${CMAKE_CURRENT_BINARY_DIR}/${name}.pc
+    @ONLY
+  )
+
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${name}.pc
+    DESTINATION lib/pkgconfig
+  )
+endmacro(configure_pkgconfig)

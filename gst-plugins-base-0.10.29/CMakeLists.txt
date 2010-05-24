@@ -68,4 +68,4 @@ add_subdirectory(gst-libs/gst/rtsp)
 add_subdirectory(gst-libs/gst/sdp)
 add_subdirectory(gst-libs/gst/tag)
 add_subdirectory(gst-libs/gst/video)
-
+add_subdirectory(pkgconfig)
