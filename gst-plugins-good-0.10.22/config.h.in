@@ -4,7 +4,7 @@
 //// #undef AC_APPLE_UNIVERSAL_BUILD
 
 /* Default audio sink */
-#define DEFAULT_AUDIOSINK ${DEFAULT_AUDIOSINK}
+#define DEFAULT_AUDIOSINK "${DEFAULT_AUDIOSINK}"
 
 /* Default audio source */
 #define DEFAULT_AUDIOSRC "${DEFAULT_AUDIOSRC}"
@@ -239,22 +239,22 @@
 // #undef HAVE_OSX_VIDEO
 
 /* Define to enable pulseaudio plug-in (used by pulseaudio). */
-// #undef HAVE_PULSE
+#cmakedefine HAVE_PULSE
 
 /* defined if pulseaudio >= 0.9.11 is available */
-// #undef HAVE_PULSE_0_9_11
+#cmakedefine HAVE_PULSE_0_9_11
 
 /* defined if pulseaudio >= 0.9.12 is available */
-// #undef HAVE_PULSE_0_9_12
+#cmakedefine HAVE_PULSE_0_9_12
 
 /* defined if pulseaudio >= 0.9.13 is available */
-// #undef HAVE_PULSE_0_9_13
+#cmakedefine HAVE_PULSE_0_9_13
 
 /* defined if pulseaudio >= 0.9.15 is available */
-// #undef HAVE_PULSE_0_9_15
+#cmakedefine HAVE_PULSE_0_9_15
 
 /* defined if pulseaudio >= 0.9.20 is available */
-// #undef HAVE_PULSE_0_9_20
+#cmakedefine HAVE_PULSE_0_9_20
 
 /* Define if RDTSC is available */
 // #undef HAVE_RDTSC

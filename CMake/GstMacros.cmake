@@ -53,3 +53,42 @@ macro(configure_pkgconfig name)
     DESTINATION lib/pkgconfig
   )
 endmacro(configure_pkgconfig)
+
+macro(redefine name dest)
+  if (${${name}})
+    set(${dest} ${${name}})
+  endif (${${name}})
+endmacro(redefine)
+
+macro(check_plugin_deps plugin)
+  set(PLUGIN_${plugin}_FOUND 1)
+  foreach(var ${ARGN})
+    if (NOT ${var})
+      set(PLUGIN_${plugin}_FOUND 0)
+    endif(NOT ${var})
+  endforeach(var)
+
+  if (PLUGIN_${plugin}_FOUND)
+    set(PLUGINS_FOUND ${PLUGINS_FOUND} ${plugin} CACHE INTERNAL foo)
+  else (PLUGIN_${plugin}_FOUND)
+    set(PLUGINS_NOT_FOUND ${PLUGINS_NOT_FOUND} ${plugin} CACHE INTERNAL foo)
+  endif (PLUGIN_${plugin}_FOUND)
+endmacro(check_plugin_deps)
+
+macro(show_plugin_summary)
+  message(STATUS "")
+  message(STATUS "Plugins that will be built:")
+  foreach(plugin ${PLUGINS_FOUND})
+    message(STATUS "    ${plugin}")
+  endforeach(plugin)
+  
+  message(STATUS "")
+  message(STATUS "Plugins that will NOT be built:")
+  foreach(plugin ${PLUGINS_NOT_FOUND})
+    message(STATUS "    ${plugin}")
+  endforeach(plugin)
+
+  message(STATUS "")
+  message(STATUS "")
+endmacro(show_plugin_summary)
+
