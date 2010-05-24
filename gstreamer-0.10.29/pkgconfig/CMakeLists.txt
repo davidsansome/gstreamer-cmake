@@ -11,6 +11,10 @@ macro(configure_pkgconfig name)
     ${CMAKE_CURRENT_BINARY_DIR}/${name}.pc
     @ONLY
   )
+
+  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${name}.pc
+    DESTINATION lib/pkgconfig
+  )
 endmacro(configure_pkgconfig)
 
 configure_pkgconfig(gstreamer-base)

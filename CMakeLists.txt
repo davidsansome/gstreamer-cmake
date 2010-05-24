@@ -85,8 +85,23 @@ macro(install_lib target)
 endmacro(install_lib)
 
 macro(install_headers dir)
-  install(FILES ${ARGN} DESTINATION include/gstreamer-${GST_MAJORMINOR}/${dir})
+  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
+  install(FILES ${ARGN} DESTINATION ${fulldir})
+  foreach(file ${ARGN})
+    configure_file(${file} ${CMAKE_BINARY_DIR}/${fulldir}/${file} COPY_ONLY)
+  endforeach(file)
 endmacro(install_headers)
+
+macro(install_gen_headers dir)
+  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
+  foreach(file ${ARGN})
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${file} DESTINATION ${fulldir})
+    configure_file(
+      ${CMAKE_CURRENT_BINARY_DIR}/${file}
+      ${CMAKE_BINARY_DIR}/${fulldir}/${file} COPY_ONLY
+    )
+  endforeach(file)
+endmacro(install_gen_headers)
 
 
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
@@ -96,4 +111,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
 
 add_subdirectory(gstreamer-0.10.29)
-#add_subdirectory(gst-plugins-base-0.10.29)
+add_subdirectory(gst-plugins-base-0.10.29)

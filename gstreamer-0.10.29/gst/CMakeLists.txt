@@ -146,6 +146,13 @@ set(HEADERS
   gstxml.h
 )
 
+set(GEN_HEADERS
+  gstenumtypes.h
+  gstmarshal.h
+  gstversion.h
+  gstconfig.h
+)
+
 add_glib_marshal(SOURCES gstmarshal gst_marshal gst_private.h)
 add_glib_enumtypes(SOURCES gstenumtypes ${HEADERS})
 
@@ -158,3 +165,4 @@ target_link_libraries(gstreamer-${GST_MAJORMINOR}
 
 install_lib(gstreamer)
 install_headers(gst ${HEADERS})
+install_gen_headers(gst ${GEN_HEADERS})
