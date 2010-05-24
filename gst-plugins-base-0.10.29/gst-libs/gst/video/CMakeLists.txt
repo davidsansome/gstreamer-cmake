@@ -15,11 +15,16 @@ set(HEADERS
   gstvideofilter.h
 )
 
+set(GEN_HEADERS
+  video-enumtypes.h
+)
+
 set(ENUM_HEADERS
   video.h
 )
 
 add_glib_enumtypes(SOURCES video-enumtypes GST_VIDEO ${ENUM_HEADERS})
+add_gen_headers(SOURCES gst/video ${GEN_HEADERS})
 
 add_library(gstvideo-${GST_MAJORMINOR} SHARED ${SOURCES})
 
@@ -30,3 +35,4 @@ target_link_libraries(gstvideo-${GST_MAJORMINOR}
 
 install_lib(gstvideo)
 install_headers(gst/video ${HEADERS})
+install_gen_headers(gst/video ${GEN_HEADERS})

@@ -15,6 +15,12 @@ set(GST_DISABLE_REGISTRY 0 CACHE BOOL "Disable registry")
 set(GST_DISABLE_XML 0 CACHE BOOL "Disable xml")
 set(GST_DISABLE_PLUGIN 0 CACHE BOOL "Disable plugins")
 
+set(DEFAULT_AUDIOSINK "autoaudiosink" CACHE STRING "Default audio sink")
+set(DEFAULT_AUDIOSRC "alsasrc" CACHE STRING "Default audio source")
+set(DEFAULT_VIDEOSINK "autovideosink" CACHE STRING "Default video sink")
+set(DEFAULT_VIDEOSRC "v4l2src" CACHE STRING "Default video source")
+set(DEFAULT_VISUALISER "goom" CACHE STRING "Default visualiser")
+
 # Dependencies
 include(FindPkgConfig)
 pkg_check_modules(GLIB REQUIRED glib-2.0)
@@ -38,3 +44,4 @@ endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
 
 add_subdirectory(gstreamer-0.10.29)
 add_subdirectory(gst-plugins-base-0.10.29)
+add_subdirectory(gst-plugins-good-0.10.22)

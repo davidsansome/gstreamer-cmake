@@ -17,7 +17,12 @@ set(HEADERS
   missing-plugins.h
 )
 
+set(GEN_HEADERS
+  pbutils-enumtypes.h
+)
+
 add_glib_enumtypes(SOURCES pbutils-enumtypes GST_INSTALL ${HEADERS})
+add_gen_headers(SOURCES gst/pbutils ${GEN_HEADERS})
 
 add_library(gstpbutils-${GST_MAJORMINOR} SHARED ${SOURCES})
 
@@ -28,3 +33,4 @@ target_link_libraries(gstpbutils-${GST_MAJORMINOR}
 
 install_lib(gstpbutils)
 install_headers(gst/pbutils ${HEADERS})
+install_gen_headers(gst/pbutils ${GEN_HEADERS})

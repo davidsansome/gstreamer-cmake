@@ -29,8 +29,13 @@ set(ENUM_HEADERS
   gstrtspdefs.h
 )
 
+set(GEN_HEADERS
+  gstrtsp-enumtypes.h
+)
+
 add_glib_enumtypes(SOURCES gstrtsp-enumtypes gst_rtsp ${ENUM_HEADERS})
 add_glib_marshal(SOURCES gstrtsp-marshal gst_rtsp_marshal gst_private.h)
+add_gen_headers(SOURCES gst/rtsp ${GEN_HEADERS})
 
 add_library(gstrtsp-${GST_MAJORMINOR} SHARED ${SOURCES})
 
@@ -41,3 +46,4 @@ target_link_libraries(gstrtsp-${GST_MAJORMINOR}
 
 install_lib(gstrtsp)
 install_headers(gst/rtsp ${HEADERS})
+install_gen_headers(gst/rtsp ${GEN_HEADERS})

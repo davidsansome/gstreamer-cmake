@@ -35,8 +35,13 @@ set(HEADERS
   xoverlay.h
 )
 
+set(GEN_HEADERS
+  interfaces-enumtypes.h
+)
+
 add_glib_marshal(SOURCES interfaces-marshal gst_interfaces_marshal gst_private.h)
 add_glib_enumtypes(SOURCES interfaces-enumtypes GST_INTERFACES ${HEADERS})
+add_gen_headers(SOURCES gst/interfaces ${GEN_HEADERS})
 
 add_library(gstinterfaces-${GST_MAJORMINOR} SHARED ${SOURCES})
 
@@ -47,3 +52,4 @@ target_link_libraries(gstinterfaces-${GST_MAJORMINOR}
 
 install_lib(gstinterfaces)
 install_headers(gst/interfaces ${HEADERS})
+install_gen_headers(gst/interfaces ${GEN_HEADERS})

@@ -16,12 +16,6 @@ set(PACKAGE_TARNAME ${PACKAGE})
 set(PACKAGE_VERSION ${VERSION})
 set(GETTEXT_PACKAGE "${PACKAGE}-${GST_MAJORMINOR}")
 
-set(DEFAULT_AUDIOSINK "autoaudiosink" CACHE STRING "Default audio sink")
-set(DEFAULT_AUDIOSRC "alsasrc" CACHE STRING "Default audio source")
-set(DEFAULT_VIDEOSINK "autovideosink" CACHE STRING "Default video sink")
-set(DEFAULT_VIDEOSRC "v4l2src" CACHE STRING "Default video source")
-set(DEFAULT_VISUALISER "goom" CACHE STRING "Default visualiser")
-
 
 include_directories(${CMAKE_BINARY_DIR}/include/gstreamer-${GST_MAJORMINOR})
 include_directories(${CMAKE_SOURCE_DIR}/gstreamer-${VERSION}/gst)

@@ -34,7 +34,12 @@ set(ENUM_HEADERS
   gstringbuffer.h
 )
 
+set(GEN_HEADERS
+  audio-enumtypes.h
+)
+
 add_glib_enumtypes(SOURCES audio-enumtypes GST_AUDIO ${ENUM_HEADERS})
+add_gen_headers(SOURCES gst/audio ${GEN_HEADERS})
 
 add_library(gstaudio-${GST_MAJORMINOR} SHARED ${SOURCES})
 
@@ -46,3 +51,4 @@ target_link_libraries(gstaudio-${GST_MAJORMINOR}
 
 install_lib(gstaudio)
 install_headers(gst/audio ${HEADERS})
+install_gen_headers(gst/audio ${GEN_HEADERS})
