@@ -7,6 +7,8 @@ if (${PLUGIN_taglib_FOUND})
   include_directories(${TAGLIB_INCLUDE_DIRS})
 
   set(SOURCES
+    gstapev2mux.cc
+    gstid3v2mux.cc
     gsttaglibmux.c
   )
 

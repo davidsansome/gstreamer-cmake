@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 2.6)
 
-check_plugin_deps(good 1394 RAW1394_FOUND LIBIEC61883_FOUND)
+check_plugin_deps(good 1394 RAW1394_FOUND LIBIEC61883_FOUND AVC1394_FOUND)
 if (${PLUGIN_1394_FOUND})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${RAW1394_INCLUDE_DIRS})
+  include_directories(${AVC1394_INCLUDE_DIRS})
   include_directories(${LIBIEC61883_INCLUDE_DIRS})
 
   add_definitions(-DHAVE_LIBIEC61883)
@@ -24,6 +25,7 @@ if (${PLUGIN_1394_FOUND})
     gstinterfaces-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${RAW1394_LIBRARIES}
+    ${AVC1394_LIBRARIES}
     ${LIBIEC61883_LIBRARIES}
   )
 
