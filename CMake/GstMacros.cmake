@@ -69,9 +69,9 @@ macro(check_plugin_deps package plugin)
   endforeach(var)
 
   if (PLUGIN_${plugin}_FOUND)
-    set(PLUGINS_FOUND ${PLUGINS_FOUND} "gst-plugins-${package}/${plugin}" CACHE INTERNAL foo)
+    set(PLUGINS_FOUND ${PLUGINS_FOUND} "${package}  ${plugin}" CACHE INTERNAL foo)
   else (PLUGIN_${plugin}_FOUND)
-    set(PLUGINS_NOT_FOUND ${PLUGINS_NOT_FOUND} "gst-plugins-${package}/${plugin}" CACHE INTERNAL foo)
+    set(PLUGINS_NOT_FOUND ${PLUGINS_NOT_FOUND} "${package}  ${plugin}" CACHE INTERNAL foo)
   endif (PLUGIN_${plugin}_FOUND)
 endmacro(check_plugin_deps)
 
