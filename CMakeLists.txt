@@ -92,14 +92,25 @@ macro(install_headers dir)
   endforeach(file)
 endmacro(install_headers)
 
-macro(install_gen_headers dir)
+macro(add_gen_headers outfiles dir)
   set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
   foreach(file ${ARGN})
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${file} DESTINATION ${fulldir})
-    configure_file(
-      ${CMAKE_CURRENT_BINARY_DIR}/${file}
-      ${CMAKE_BINARY_DIR}/${fulldir}/${file} COPY_ONLY
+    add_custom_command(
+      OUTPUT "${CMAKE_BINARY_DIR}/${fulldir}/${file}"
+      COMMAND ${CMAKE_COMMAND} -E copy
+          "${CMAKE_CURRENT_BINARY_DIR}/${file}"
+          "${CMAKE_BINARY_DIR}/${fulldir}/${file}"
+      DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/${file}"
     )
+    list(APPEND ${outfiles} "${CMAKE_BINARY_DIR}/${fulldir}/${file}")
+  endforeach(file)
+endmacro(add_gen_headers)
+
+macro(install_gen_headers outfiles dir)
+  set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
+  foreach(file ${ARGN})
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${file}
+      DESTINATION include/gstreamer-${GST_MAJORMINOR}/${dir})
   endforeach(file)
 endmacro(install_gen_headers)
 

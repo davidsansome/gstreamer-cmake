@@ -155,6 +155,7 @@ set(GEN_HEADERS
 
 add_glib_marshal(SOURCES gstmarshal gst_marshal gst_private.h)
 add_glib_enumtypes(SOURCES gstenumtypes ${HEADERS})
+add_gen_headers(SOURCES gst ${GEN_HEADERS})
 
 add_library(gstreamer-${GST_MAJORMINOR} SHARED ${SOURCES})
 
