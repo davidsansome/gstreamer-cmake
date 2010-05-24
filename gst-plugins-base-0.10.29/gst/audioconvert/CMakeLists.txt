@@ -14,6 +14,7 @@ set(SOURCES
 add_library(gstaudioconvert MODULE ${SOURCES})
 
 target_link_libraries(gstaudioconvert
+  gstbase-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )

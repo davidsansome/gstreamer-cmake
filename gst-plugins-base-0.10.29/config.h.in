@@ -54,7 +54,7 @@
 // #undef GST_GCOV_ENABLED
 
 /* plugin install helper script */
-#define GST_INSTALL_PLUGINS_HELPER "${CMAKE_INSTALL_PREFIX}/libexec/gst-install-plugins-helper"
+#define GST_INSTALL_PLUGINS_HELPER "${CMAKE_INSTALL_PREFIX}/libexec/gstreamer-${GST_MAJORMINOR}/gst-install-plugins-helper"
 
 /* Default errorlevel to use */
 #define GST_LEVEL_DEFAULT GST_LEVEL_NONE

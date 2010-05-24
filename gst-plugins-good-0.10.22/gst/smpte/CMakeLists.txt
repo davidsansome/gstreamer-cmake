@@ -17,6 +17,7 @@ add_library(gstsmpte MODULE ${SOURCES})
 target_link_libraries(gstsmpte
   gstbase-${GST_MAJORMINOR}
   gstvideo-${GST_MAJORMINOR}
+  gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

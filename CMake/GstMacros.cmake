@@ -34,7 +34,7 @@ macro(add_gen_headers outfiles dir)
   endforeach(file)
 endmacro(add_gen_headers)
 
-macro(install_gen_headers outfiles dir)
+macro(install_gen_headers dir)
   set(fulldir include/gstreamer-${GST_MAJORMINOR}/${dir})
   foreach(file ${ARGN})
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${file}

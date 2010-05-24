@@ -14,6 +14,7 @@ add_library(gstvideomixer MODULE ${SOURCES})
 target_link_libraries(gstvideomixer
   gstbase-${GST_MAJORMINOR}
   gstvideo-${GST_MAJORMINOR}
+  gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
   ${LIBOIL_LIBRARIES}
 )

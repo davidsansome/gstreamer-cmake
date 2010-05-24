@@ -12,6 +12,7 @@ add_library(gstshapewipe MODULE ${SOURCES})
 target_link_libraries(gstshapewipe
   gstbase-${GST_MAJORMINOR}
   gstcontroller-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

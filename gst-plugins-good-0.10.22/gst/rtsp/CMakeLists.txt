@@ -15,7 +15,6 @@ add_library(gstrtsp MODULE ${SOURCES})
 target_link_libraries(gstrtsp
   gstbase-${GST_MAJORMINOR}
   gstinterfaces-${GST_MAJORMINOR}
-  gstbase-${GST_MAJORMINOR}
   gstrtp-${GST_MAJORMINOR}
   gstrtsp-${GST_MAJORMINOR}
   gstsdp-${GST_MAJORMINOR}

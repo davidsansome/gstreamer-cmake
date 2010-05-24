@@ -10,6 +10,7 @@ set(SOURCES
 add_library(gstapp MODULE ${SOURCES})
 
 target_link_libraries(gstapp
+  gstbase-${GST_MAJORMINOR}
   gstapp-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
