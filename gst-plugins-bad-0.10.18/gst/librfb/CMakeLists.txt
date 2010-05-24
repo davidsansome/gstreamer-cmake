@@ -27,3 +27,8 @@ target_link_libraries(gstrfbsrc
 )
 
 install_plugin(gstrfbsrc)
+
+install(TARGETS rfb
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)

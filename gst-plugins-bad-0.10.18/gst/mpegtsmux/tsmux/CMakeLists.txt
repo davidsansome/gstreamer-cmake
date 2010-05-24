@@ -11,3 +11,8 @@ set(SOURCES
 add_library(tsmux SHARED ${SOURCES})
 
 target_link_libraries(tsmux)
+
+install(TARGETS tsmux
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)

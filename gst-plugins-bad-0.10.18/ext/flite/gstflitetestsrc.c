@@ -301,8 +301,6 @@ gst_flite_test_src_get_times (GstBaseSrc * basesrc, GstBuffer * buffer,
 }
 #endif
 
-cst_voice *register_cmu_us_kal ();
-
 
 
 static gboolean
@@ -312,7 +310,7 @@ gst_flite_test_src_start (GstBaseSrc * basesrc)
 
   src->adapter = gst_adapter_new ();
 
-  src->voice = register_cmu_us_kal ();
+  src->voice = new_voice ();
   src->n_channels = 2;
 
   return TRUE;

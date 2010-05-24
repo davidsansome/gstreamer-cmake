@@ -11,6 +11,7 @@ add_library(gstsubenc MODULE ${SOURCES})
 
 target_link_libraries(gstsubenc
   gstbase-${GST_MAJORMINOR}
+  gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

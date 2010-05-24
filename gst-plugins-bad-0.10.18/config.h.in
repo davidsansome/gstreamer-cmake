@@ -29,7 +29,7 @@
 // #undef FAAD2_MINOR_VERSION
 
 /* Define if AAC is using new api prefix */
-// #undef FAAD_IS_NEAAC
+#define FAAD_IS_NEAAC 1
 
 /* gettext package name */
 #define GETTEXT_PACKAGE "${GETTEXT_PACKAGE}"
@@ -447,7 +447,7 @@
 // #undef LT_OBJDIR
 
 /* Define if the old MusePack API is used */
-// #undef MPC_IS_OLD_API
+#define MPC_IS_OLD_API 1
 
 /* Define to 1 if your C compiler doesn't accept -c and -o together. */
 // #undef NO_MINUS_C_MINUS_O
