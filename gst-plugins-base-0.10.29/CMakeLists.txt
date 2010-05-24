@@ -34,6 +34,7 @@ configure_file(
 )
 
 #add_subdirectory(gst/adder)
+add_subdirectory(gst-libs/gst/app)
 add_subdirectory(gst-libs/gst/audio)
 add_subdirectory(gst-libs/gst/interfaces)
 
