@@ -18,6 +18,8 @@ add_library(rfb SHARED ${RFB_SOURCES})
 add_library(gstrfbsrc MODULE ${SOURCES})
 
 target_link_libraries(rfb
+  gstreamer-${GST_MAJORMINOR}
+  gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 target_link_libraries(gstrfbsrc

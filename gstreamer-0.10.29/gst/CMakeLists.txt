@@ -164,6 +164,9 @@ add_library(gstreamer-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstreamer-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GMODULE_LIBRARIES}
+  ${GOBJECT_LIBRARIES}
+  ${GTHREAD_LIBRARIES}
   ${LIBXML_LIBRARIES}
 )
 

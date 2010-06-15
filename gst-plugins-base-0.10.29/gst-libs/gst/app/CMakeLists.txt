@@ -21,6 +21,7 @@ add_library(gstapp-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstapp-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
+  gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

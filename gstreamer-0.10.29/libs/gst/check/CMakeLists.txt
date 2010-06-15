@@ -26,6 +26,7 @@ add_library(gstcheck-${GST_MAJORMINOR} SHARED ${SOURCES})
 target_link_libraries(gstcheck-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${CHECK_LIBRARIES}
 )
 
 install_lib(gstcheck)

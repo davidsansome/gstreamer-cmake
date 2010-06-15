@@ -27,7 +27,7 @@
 #define RFB_SET_UINT16(ptr, val) GST_WRITE_UINT16_BE((ptr),(val))
 #define RFB_SET_UINT8(ptr, val) GST_WRITE_UINT8((ptr),(val))
 
-GST_DEBUG_CATEGORY_EXTERN (rfbdecoder_debug);
+GST_DEBUG_CATEGORY_STATIC (rfbdecoder_debug);
 #define GST_CAT_DEFAULT rfbdecoder_debug
 
 #if 0

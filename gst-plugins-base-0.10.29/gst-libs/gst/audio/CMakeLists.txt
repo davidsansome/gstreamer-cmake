@@ -45,6 +45,7 @@ add_library(gstaudio-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstaudio-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
+  gstbase-${GST_MAJORMINOR}
   gstinterfaces-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )

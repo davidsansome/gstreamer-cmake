@@ -30,6 +30,7 @@ add_library(gstvideo-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstvideo-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
+  gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

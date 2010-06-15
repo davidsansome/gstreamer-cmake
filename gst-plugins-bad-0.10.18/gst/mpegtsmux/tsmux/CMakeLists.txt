@@ -10,7 +10,9 @@ set(SOURCES
 
 add_library(tsmux SHARED ${SOURCES})
 
-target_link_libraries(tsmux)
+target_link_libraries(tsmux
+  ${GLIB_LIBRARIES}
+)
 
 install(TARGETS tsmux
   LIBRARY DESTINATION lib

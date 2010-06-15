@@ -18,7 +18,7 @@ set(HEADERS
 add_glib_enumtypes(SOURCES photography-enumtypes GST_PHOTOGRAPHY ${HEADERS})
 add_gen_headers(SOURCES gst/photography ${GEN_HEADERS})
 
-add_library(gstphotography-${GST_MAJORMINOR} MODULE ${SOURCES})
+add_library(gstphotography-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstphotography-${GST_MAJORMINOR}
   gstbase-${GST_MAJORMINOR}

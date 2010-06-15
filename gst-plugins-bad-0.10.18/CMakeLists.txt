@@ -29,6 +29,7 @@ find_library(FAAC_LIBRARIES faac)
 find_path(FAAC_INCLUDE_DIRS faac.h)
 find_library(FAAD_LIBRARIES faad)
 find_path(FAAD_INCLUDE_DIRS faad.h)
+
 find_library(FLITE_LIBRARIES flite)
 find_path(FLITE_INCLUDE_DIRS flite/flite.h)
 find_library(GSM_LIBRARIES gsm)
@@ -108,6 +109,14 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR}/gst-libs)
 include_directories(${GLIB_INCLUDE_DIRS})
 include_directories(${GMODULE_INCLUDE_DIRS})
 include_directories(${LIBXML_INCLUDE_DIRS})
+
+
+set(FAAD_IS_NEAAC "0" CACHE STRING "Using new FAAD header")
+find_path(FAAD_NE_INCLUDE_DIRS neaac.h)
+if(${FAAD_NE_INCLUDE_DIRS})
+  set(FAAD_IS_NEAAC "1")
+  include_directories(${FAAD_NE_INCLUDE_DIRS})
+endif(${FAAD_NE_INCLUDE_DIRS})
 
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in

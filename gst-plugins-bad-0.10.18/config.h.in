@@ -29,7 +29,7 @@
 // #undef FAAD2_MINOR_VERSION
 
 /* Define if AAC is using new api prefix */
-#define FAAD_IS_NEAAC 1
+#cmakedefine FAAD_IS_NEAAC
 
 /* gettext package name */
 #define GETTEXT_PACKAGE "${GETTEXT_PACKAGE}"
@@ -47,7 +47,7 @@
 // #undef GST_HAVE_UNSAFE_FORK
 
 /* Default errorlevel to use */
-#define GST_LEVEL_DEFAULT ${GST_LEVEL_DEFAULT}
+#define GST_LEVEL_DEFAULT GST_LEVEL_NONE
 
 /* GStreamer license */
 #define GST_LICENSE "${GST_LICENSE}"

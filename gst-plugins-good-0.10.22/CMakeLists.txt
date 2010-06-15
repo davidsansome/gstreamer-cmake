@@ -133,7 +133,7 @@ add_subdirectory(ext/pulse)
 add_subdirectory(ext/raw1394)
 add_subdirectory(ext/shout2)
 add_subdirectory(ext/soup)
-add_subdirectory(ext/speex)
+#add_subdirectory(ext/speex)
 add_subdirectory(ext/taglib)
 add_subdirectory(ext/wavpack)
 

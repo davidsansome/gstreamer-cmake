@@ -12,6 +12,7 @@ add_library(gstsignalprocessor-${GST_MAJORMINOR} MODULE ${SOURCES})
 target_link_libraries(gstsignalprocessor-${GST_MAJORMINOR}
   gstbase-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
+  gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 
