@@ -1,0 +1,202 @@
+cmake_minimum_required(VERSION 2.6)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR}/..)
+
+set(CMAKE_C_FLAGS "-std=c99")
+add_definitions(-DHAVE_AV_CONFIG_H)
+
+set(SOURCES
+  4xm.c
+  adtsenc.c
+  aea.c
+  aiffdec.c
+  aiffenc.c
+  allformats.c
+  amr.c
+  anm.c
+  apc.c
+  ape.c
+  apetag.c
+  asf.c
+  asfcrypt.c
+  asfdec.c
+  asfenc.c
+  assdec.c
+  assenc.c
+  au.c
+  audiointerleave.c
+  avc.c
+  avi.c
+  avidec.c
+  avienc.c
+  avio.c
+  aviobuf.c
+  avlanguage.c
+  avs.c
+  bethsoftvid.c
+  bfi.c
+  bink.c
+  c93.c
+  caf.c
+  cafdec.c
+  cdg.c
+  concat.c
+  crcenc.c
+  cutils.c
+  daud.c
+  dsicin.c
+  dv.c
+  dvenc.c
+  dxa.c
+  eacdata.c
+  electronicarts.c
+  ffmdec.c
+  ffmenc.c
+  file.c
+  filmstripdec.c
+  filmstripenc.c
+  flacdec.c
+  flacenc.c
+  flic.c
+  flvdec.c
+  flvenc.c
+  framecrcenc.c
+  gif.c
+  gopher.c
+  gxf.c
+  gxfenc.c
+  http.c
+  id3v1.c
+  id3v2.c
+  idcin.c
+  idroq.c
+  iff.c
+  img2.c
+  ipmovie.c
+  isom.c
+  iss.c
+  iv8.c
+  #libnut.c
+  lmlm4.c
+  matroska.c
+  matroskadec.c
+  matroskaenc.c
+  metadata.c
+  metadata_compat.c
+  mm.c
+  mmf.c
+  mov.c
+  movenc.c
+  mp3.c
+  mpc.c
+  mpc8.c
+  mpeg.c
+  mpegenc.c
+  mpegts.c
+  mpegtsenc.c
+  mpjpeg.c
+  msnwc_tcp.c
+  mtv.c
+  mvi.c
+  mxf.c
+  mxfdec.c
+  mxfenc.c
+  ncdec.c
+  nsvdec.c
+  nut.c
+  nutdec.c
+  nutenc.c
+  nuv.c
+  oggdec.c
+  oggenc.c
+  oggparsedirac.c
+  oggparseflac.c
+  oggparseogm.c
+  oggparsespeex.c
+  oggparsetheora.c
+  oggparsevorbis.c
+  oma.c
+  options.c
+  os_support.c
+  output-example.c
+  psxstr.c
+  pva.c
+  qcp.c
+  r3d.c
+  raw.c
+  rdt.c
+  riff.c
+  rl2.c
+  rm.c
+  rmdec.c
+  rmenc.c
+  rpl.c
+  rtmppkt.c
+  rtmpproto.c
+  rtp.c
+  rtp_asf.c
+  rtp_h264.c
+  rtp_vorbis.c
+  rtpdec.c
+  rtpdec_amr.c
+  rtpdec_h263.c
+  rtpenc.c
+  rtpenc_aac.c
+  rtpenc_amr.c
+  rtpenc_h263.c
+  rtpenc_h264.c
+  rtpenc_mpv.c
+  rtpproto.c
+  rtsp.c
+  sdp.c
+  seek.c
+  segafilm.c
+  sierravmd.c
+  siff.c
+  smacker.c
+  sol.c
+  soxdec.c
+  soxenc.c
+  spdif.c
+  swfdec.c
+  swfenc.c
+  tcp.c
+  thp.c
+  tiertexseq.c
+  timefilter.c
+  tmv.c
+  tta.c
+  txd.c
+  udp.c
+  utils.c
+  vc1test.c
+  vc1testenc.c
+  voc.c
+  vocdec.c
+  vocenc.c
+  vqf.c
+  wav.c
+  wc3movie.c
+  westwood.c
+  wv.c
+  xa.c
+  yuv4mpeg.c
+)
+
+if(LINUX)
+  list(APPEND SOURCES
+  )
+endif(LINUX)
+
+if(WINDOWS)
+  list(APPEND SOURCES avisynth.c)
+endif(WINDOWS)
+add_library(libavformat SHARED ${SOURCES})
+target_link_libraries(libavformat
+  libavcodec
+  libavutil
+  libswscale
+  ${BZ2_LIBRARIES}
+)

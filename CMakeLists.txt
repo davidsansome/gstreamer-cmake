@@ -36,6 +36,12 @@ pkg_check_modules(GTHREAD REQUIRED gthread-2.0)
 pkg_check_modules(LIBOIL REQUIRED liboil-0.3)
 pkg_check_modules(LIBXML libxml-2.0)
 pkg_check_modules(CHECK check)
+pkg_check_modules(SPEEX speex>=1.2)
+
+find_library(FAAC_LIBRARIES faac)
+find_path(FAAC_INCLUDE_DIRS faac.h)
+find_library(FAAD_LIBRARIES faad)
+find_path(FAAD_INCLUDE_DIRS faad.h)
 
 link_directories(${GLIB_LIBRARY_DIRS})
 
@@ -64,5 +70,6 @@ add_subdirectory(gst-plugins-base-0.10.29)
 add_subdirectory(gst-plugins-good-0.10.22)
 add_subdirectory(gst-plugins-ugly-0.10.14)
 add_subdirectory(gst-plugins-bad-0.10.18)
+add_subdirectory(gst-ffmpeg-0.10.10)
 
 show_plugin_summary()
