@@ -172,14 +172,10 @@ set(SOURCES
   kmvc.c
   lcldec.c
   lclenc.c
-  libfaac.c
-  libfaad.c
   libmp3lame.c
   libopencore-amr.c
   libtheoraenc.c
   libvorbis.c
-  libxvid_rc.c
-  libxvidff.c
   ljpegenc.c
   loco.c
   lpc.c
@@ -403,19 +399,46 @@ set(SOURCES
 if(SPEEX_FOUND)
   list(APPEND SOURCES libspeexdec.c)
 endif()
+
+if(FAAC_FOUND)
+  list(APPEND SOURCES libfaac.c)
+endif()
+
+if(FAAD_FOUND)
+  list(APPEND SOURCES libfaad.c)
+endif()
+
+if(XVID_FOUND)
+  list(APPEND SOURCES
+    libxvid_rc.c
+    libxvidff.c
+  )
+endif()
+
 if(WINDOWS)
   list(APPEND SOURCES w32thread.c)
 endif()
+
 add_library(libavcodec SHARED ${SOURCES})
+
 target_link_libraries(libavcodec
   libavutil
-  ${FAAC_LIBRARIES}
-  ${FAAD_LIBRARIES}
   ${VORBIS_LIBRARIES}
   ${VORBISENC_LIBRARIES}
   ${LAME_LIBRARIES}
   ${SPEEX_LIBRARIES}
   ${THEORA_LIBRARIES}
   ${THEORAENC_LIBRARIES}
-  ${XVID_LIBRARIES}
   z)
+
+if(FAAC_FOUND)
+  target_link_libraries(libavcodec ${FAAC_LIBRARIES})
+endif()
+
+if(FAAC_FOUND)
+  target_link_libraries(libavcodec ${FAAD_LIBRARIES})
+endif()
+
+if(XVID_FOUND)
+  target_link_libraries(libavcodec ${XVID_LIBRARIES})
+endif()
