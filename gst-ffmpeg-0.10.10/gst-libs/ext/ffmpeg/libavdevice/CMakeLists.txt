@@ -27,7 +27,7 @@ if(LINUX)
     v4l2.c
     x11grab.c
   )
-endif(LINUX)
+endif()
 
 add_library(libavdevice SHARED ${SOURCES})
 target_link_libraries(libavdevice

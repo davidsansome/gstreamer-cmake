@@ -19,12 +19,12 @@ set(SOURCES
 if(LINUX)
   list(APPEND SOURCES
   )
-endif(LINUX)
+endif()
 
 if(WINDOWS)
   list(APPEND SOURCES
   )
-endif(WINDOWS)
+endif()
 add_library(libswscale SHARED ${SOURCES})
 target_link_libraries(libswscale
   libavutil

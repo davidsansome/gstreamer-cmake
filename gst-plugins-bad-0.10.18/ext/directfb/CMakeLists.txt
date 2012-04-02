@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad directfb DIRECTFB_FOUND)
-if (${PLUGIN_directfb_FOUND})
+if(PLUGIN_directfb_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${DIRECTFB_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_directfb_FOUND})
   )
 
   install_plugin(gstdirectfb)
-endif (${PLUGIN_directfb_FOUND})
+endif()

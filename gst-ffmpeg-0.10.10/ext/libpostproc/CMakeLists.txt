@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ffmpeg postproc)
-if (${PLUGIN_postproc_FOUND})
+if(PLUGIN_postproc_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${ALSA_INCLUDE_DIRS})
@@ -29,4 +29,4 @@ if (${PLUGIN_postproc_FOUND})
   )
 
   install_plugin(postproc)
-endif (${PLUGIN_postproc_FOUND})
+endif()

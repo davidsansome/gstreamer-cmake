@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad sdl SDL_FOUND)
-if (${PLUGIN_sdl_FOUND})
+if(PLUGIN_sdl_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SDL_INCLUDE_DIRS})
@@ -24,4 +24,4 @@ if (${PLUGIN_sdl_FOUND})
   )
 
   install_plugin(gstsdl)
-endif (${PLUGIN_sdl_FOUND})
+endif()

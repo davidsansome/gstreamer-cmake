@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad mimic LIBMIMIC_FOUND)
-if (${PLUGIN_mimic_FOUND})
+if(PLUGIN_mimic_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${LIBMIMIC_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_mimic_FOUND})
   )
 
   install_plugin(gstmimic)
-endif (${PLUGIN_mimic_FOUND})
+endif()

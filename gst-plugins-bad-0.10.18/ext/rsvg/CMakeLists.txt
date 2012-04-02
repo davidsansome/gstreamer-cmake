@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad rsvg RSVG_FOUND)
-if (${PLUGIN_rsvg_FOUND})
+if(PLUGIN_rsvg_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${RSVG_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_rsvg_FOUND})
   )
 
   install_plugin(gstrsvg)
-endif (${PLUGIN_rsvg_FOUND})
+endif()

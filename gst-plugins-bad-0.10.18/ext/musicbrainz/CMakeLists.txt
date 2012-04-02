@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad musicbrainz MUSICBRAINZ_FOUND)
-if (${PLUGIN_musicbrainz_FOUND})
+if(PLUGIN_musicbrainz_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${MUSICBRAINZ_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_musicbrainz_FOUND})
   )
 
   install_plugin(gstmusicbrainz)
-endif (${PLUGIN_musicbrainz_FOUND})
+endif()

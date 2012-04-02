@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ugly amrwbdec AMRWB_FOUND)
-if (${PLUGIN_amrwbdec_FOUND})
+if(PLUGIN_amrwbdec_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${AMRWB_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_amrwbdec_FOUND})
   )
 
   install_plugin(gstamrwbdec)
-endif (${PLUGIN_amrwbdec_FOUND})
+endif()

@@ -52,14 +52,14 @@ find_package(FLEX)
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DNDEBUG)
   add_definitions(-DQT_NO_DEBUG_OUTPUT)
-endif(${CMAKE_BUILD_TYPE} MATCHES "Release")
+endif()
 
 # Useful variables for autotools compat.
 if (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
   set(HAVE_CPU_X86_64 1)
 else (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
   set(HAVE_CPU_I386 1)
-endif (${CMAKE_SYSTEM_PROCESSOR} EQUAL "x86_64")
+endif()
 
 # These lists are appended to by GstMacros
 set(PLUGINS_FOUND "" CACHE INTERNAL foo)

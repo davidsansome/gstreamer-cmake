@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad dirac DIRAC_FOUND)
-if (${PLUGIN_dirac_FOUND})
+if(PLUGIN_dirac_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${DIRAC_INCLUDE_DIRS})
@@ -23,4 +23,4 @@ if (${PLUGIN_dirac_FOUND})
   )
 
   install_plugin(gstdirac)
-endif (${PLUGIN_dirac_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good speex SPEEX_FOUND)
-if (${PLUGIN_speex_FOUND})
+if(PLUGIN_speex_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SPEEX_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_speex_FOUND})
   )
 
   install_plugin(gstspeex)
-endif (${PLUGIN_speex_FOUND})
+endif()

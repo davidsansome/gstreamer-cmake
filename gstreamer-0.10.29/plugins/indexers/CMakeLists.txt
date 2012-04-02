@@ -6,7 +6,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 if (NOT ${GST_DISABLE_LOADSAVE})
   set(GST_LOADSAVE_SRC gstfileindex.c)
   set(GST_FILEINDEX_LIBS ${LIBXML_LIBRARIES})
-endif (NOT ${GST_DISABLE_LOADSAVE})
+endif()
 
 set(SOURCES
   gstindexers.c

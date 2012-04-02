@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad dts DTS_FOUND)
-if (${PLUGIN_dts_FOUND})
+if(PLUGIN_dts_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${DTS_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_dts_FOUND})
   )
 
   install_plugin(gstdts)
-endif (${PLUGIN_dts_FOUND})
+endif()

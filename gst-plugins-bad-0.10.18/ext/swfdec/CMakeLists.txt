@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad swfdec SWFDEC_FOUND)
-if (${PLUGIN_swfdec_FOUND})
+if(PLUGIN_swfdec_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SWFDEC_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_swfdec_FOUND})
   )
 
   install_plugin(gstswfdec)
-endif (${PLUGIN_swfdec_FOUND})
+endif()

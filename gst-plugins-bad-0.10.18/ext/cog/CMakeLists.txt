@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad cog COG_FOUND)
-if (${PLUGIN_cog_FOUND})
+if(PLUGIN_cog_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_SOURCE_DIR}/..)
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -36,4 +36,4 @@ if (${PLUGIN_cog_FOUND})
   )
 
   install_plugin(gstcog)
-endif (${PLUGIN_cog_FOUND})
+endif()

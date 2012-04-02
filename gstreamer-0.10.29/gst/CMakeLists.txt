@@ -11,15 +11,15 @@ add_definitions(-DG_LOG_DOMAIN=g_log_domain_gstreamer)
 # Optional sources
 if (NOT ${GST_DISABLE_LOADSAVE})
   set(GST_LOADSAVE_SRC gstxml.c)
-endif (NOT ${GST_DISABLE_LOADSAVE})
+endif()
 
 if (NOT ${GST_DISABLE_REGISTRY})
   set(GST_REGISTRY_SRC gstregistrybinary.c)
-endif (NOT ${GST_DISABLE_REGISTRY})
+endif()
 
 if (NOT ${GST_DISABLE_TRACE})
   set(GST_TRACE_SRC gsttrace.c)
-endif (NOT ${GST_DISABLE_TRACE})
+endif()
 
 BISON_TARGET(gstparse-parser
   parse/grammar.y

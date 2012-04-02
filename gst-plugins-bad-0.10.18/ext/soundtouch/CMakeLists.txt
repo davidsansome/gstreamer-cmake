@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad soundtouch SOUNDTOUCH_FOUND)
-if (${PLUGIN_soundtouch_FOUND})
+if(PLUGIN_soundtouch_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SOUNDTOUCH_INCLUDE_DIRS})
@@ -23,4 +23,4 @@ if (${PLUGIN_soundtouch_FOUND})
   )
 
   install_plugin(gstsoundtouch)
-endif (${PLUGIN_soundtouch_FOUND})
+endif()

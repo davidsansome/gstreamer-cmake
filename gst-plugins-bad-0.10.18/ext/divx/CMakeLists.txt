@@ -6,7 +6,7 @@ check_plugin_deps(bad divx
   DIVX_DECORE_LIBRARIES
   DIVX_DECORE_INCLUDE_DIRS
 )
-if (${PLUGIN_divx_FOUND})
+if(PLUGIN_divx_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${DIVX_ENCORE_INCLUDE_DIRS})
@@ -35,4 +35,4 @@ if (${PLUGIN_divx_FOUND})
 
   install_plugin(gstdivxenc)
   install_plugin(gstdivxdec)
-endif (${PLUGIN_divx_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ugly cdio CDIO_FOUND)
-if (${PLUGIN_cdio_FOUND})
+if(PLUGIN_cdio_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${CDIO_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_cdio_FOUND})
   )
 
   install_plugin(gstcdio)
-endif (${PLUGIN_cdio_FOUND})
+endif()

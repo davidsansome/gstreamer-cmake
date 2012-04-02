@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 2.6)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-if(${LIBXML_FOUND})
+if(LIBXML_FOUND)
   set(SAMIPARSE_SOURCES samiparse.c)
-endif(${LIBXML_FOUND})
+endif()
 
 set(SOURCES
   gstssaparse.c

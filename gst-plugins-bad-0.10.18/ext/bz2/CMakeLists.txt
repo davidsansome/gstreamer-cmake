@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad bz2 BZ2_LIBRARIES BZ2_INCLUDE_DIRS)
-if (${PLUGIN_bz2_FOUND})
+if(PLUGIN_bz2_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${BZ2_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_bz2_FOUND})
   )
 
   install_plugin(gstbz2)
-endif (${PLUGIN_bz2_FOUND})
+endif()

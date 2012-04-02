@@ -188,11 +188,11 @@ set(SOURCES
 if(LINUX)
   list(APPEND SOURCES
   )
-endif(LINUX)
+endif()
 
 if(WINDOWS)
   list(APPEND SOURCES avisynth.c)
-endif(WINDOWS)
+endif()
 add_library(libavformat SHARED ${SOURCES})
 target_link_libraries(libavformat
   libavcodec

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad timidity TIMIDITY_FOUND)
-if (${PLUGIN_timidity_FOUND})
+if(PLUGIN_timidity_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${TIMIDITY_INCLUDE_DIRS})
@@ -19,11 +19,11 @@ if (${PLUGIN_timidity_FOUND})
   )
 
   install_plugin(gsttimidity)
-endif (${PLUGIN_timidity_FOUND})
+endif()
 
 
 check_plugin_deps(bad wildmidi WILDMIDI_LIBRARIES WILDMIDI_INCLUDE_DIRS)
-if (${PLUGIN_wildmidi_FOUND})
+if(PLUGIN_wildmidi_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${WILDMIDI_INCLUDE_DIRS})
@@ -41,4 +41,4 @@ if (${PLUGIN_wildmidi_FOUND})
   )
 
   install_plugin(gstwildmidi)
-endif (${PLUGIN_wildmidi_FOUND})
+endif()

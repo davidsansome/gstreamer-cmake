@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad zbar _FOUND)
-if (${PLUGIN_zbar_FOUND})
+if(PLUGIN_zbar_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_zbar_FOUND})
   )
 
   install_plugin(gstzbar)
-endif (${PLUGIN_zbar_FOUND})
+endif()

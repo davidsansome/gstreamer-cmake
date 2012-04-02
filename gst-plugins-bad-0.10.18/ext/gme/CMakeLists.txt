@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad gme _FOUND)
-if (${PLUGIN_gme_FOUND})
+if(PLUGIN_gme_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_gme_FOUND})
   )
 
   install_plugin(gstgme)
-endif (${PLUGIN_gme_FOUND})
+endif()

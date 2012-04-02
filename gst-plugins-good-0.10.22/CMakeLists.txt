@@ -134,7 +134,7 @@ add_subdirectory(ext/shout2)
 add_subdirectory(ext/soup)
 if(SPEEX_FOUND)
   add_subdirectory(ext/speex)
-endif(SPEEX_FOUND)
+endif()
 add_subdirectory(ext/taglib)
 add_subdirectory(ext/wavpack)
 

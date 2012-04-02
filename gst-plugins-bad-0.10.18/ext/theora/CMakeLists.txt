@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad theora THEORADEC_FOUND)
-if (${PLUGIN_theora_FOUND})
+if(PLUGIN_theora_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${THEORADEC_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_theora_FOUND})
   )
 
   install_plugin(gsttheora)
-endif (${PLUGIN_theora_FOUND})
+endif()

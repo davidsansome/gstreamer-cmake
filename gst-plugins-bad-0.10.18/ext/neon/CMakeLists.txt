@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad neonhttpsrc NEON_FOUND)
-if (${PLUGIN_neonhttpsrc_FOUND})
+if(PLUGIN_neonhttpsrc_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${NEON_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_neonhttpsrc_FOUND})
   )
 
   install_plugin(gstneonhttpsrc)
-endif (${PLUGIN_neonhttpsrc_FOUND})
+endif()

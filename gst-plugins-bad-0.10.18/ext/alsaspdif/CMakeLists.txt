@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad alsaspdif ALSA_FOUND)
-if (${PLUGIN_alsaspdif_FOUND})
+if(PLUGIN_alsaspdif_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${ALSA_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_alsaspdif_FOUND})
   )
 
   install_plugin(gstalsaspdif)
-endif (${PLUGIN_alsaspdif_FOUND})
+endif()

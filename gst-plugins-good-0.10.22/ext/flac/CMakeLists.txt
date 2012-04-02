@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good flac FLAC_FOUND)
-if (${PLUGIN_flac_FOUND})
+if(PLUGIN_flac_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${FLAC_INCLUDE_DIRS})
@@ -24,4 +24,4 @@ if (${PLUGIN_flac_FOUND})
   )
 
   install_plugin(gstflac)
-endif (${PLUGIN_flac_FOUND})
+endif()

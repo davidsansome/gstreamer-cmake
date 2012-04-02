@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad apexsink APEXSINK_FOUND)
-if (${PLUGIN_apexsink_FOUND})
+if(PLUGIN_apexsink_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${APEXSINK_INCLUDE_DIRS})
@@ -23,4 +23,4 @@ if (${PLUGIN_apexsink_FOUND})
   )
 
   install_plugin(gstapexsink)
-endif (${PLUGIN_apexsink_FOUND})
+endif()

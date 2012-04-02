@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad mythtv GMYTH_FOUND)
-if (${PLUGIN_mythtv_FOUND})
+if(PLUGIN_mythtv_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${GMYTH_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_mythtv_FOUND})
   )
 
   install_plugin(gstmythtv)
-endif (${PLUGIN_mythtv_FOUND})
+endif()

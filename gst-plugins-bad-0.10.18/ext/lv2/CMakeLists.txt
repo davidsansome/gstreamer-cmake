@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad lv2 LV2_FOUND)
-if (${PLUGIN_lv2_FOUND})
+if(PLUGIN_lv2_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${LV2_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_lv2_FOUND})
   )
 
   install_plugin(gstlv2)
-endif (${PLUGIN_lv2_FOUND})
+endif()

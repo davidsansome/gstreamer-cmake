@@ -28,7 +28,7 @@ endfunction(add_versioned_executable)
 
 if (NOT ${GST_DISABLE_LOADSAVE})
   add_versioned_executable(xmllaunch gst-launch.c)
-endif (NOT ${GST_DISABLE_LOADSAVE})
+endif()
 
 add_versioned_executable(launch gst-launch.c)
 add_versioned_executable(inspect gst-inspect.c)

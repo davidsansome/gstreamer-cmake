@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good png PNG_FOUND)
-if (${PLUGIN_png_FOUND})
+if(PLUGIN_png_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${PNG_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_png_FOUND})
   )
 
   install_plugin(gstpng)
-endif (${PLUGIN_png_FOUND})
+endif()

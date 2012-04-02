@@ -92,7 +92,7 @@ redefine(CELT_0_7_FOUND HAVE_CELT_0_7)
 
 if (${EXIF_FOUND} OR ${IPTC_FOUND} OR ${XMP_FOUND})
   set(HAVE_METADATA 1)
-endif (${EXIF_FOUND} OR ${IPTC_FOUND} OR ${XMP_FOUND})
+endif()
 
 
 include_directories(${CMAKE_BINARY_DIR}/include/gstreamer-${GST_MAJORMINOR})
@@ -109,10 +109,10 @@ include_directories(${LIBXML_INCLUDE_DIRS})
 
 set(FAAD_IS_NEAAC "0" CACHE STRING "Using new FAAD header")
 find_path(FAAD_NE_INCLUDE_DIRS neaac.h)
-if(${FAAD_NE_INCLUDE_DIRS})
+if(FAAD_NE_INCLUDE_DIRS)
   set(FAAD_IS_NEAAC "1")
   include_directories(${FAAD_NE_INCLUDE_DIRS})
-endif(${FAAD_NE_INCLUDE_DIRS})
+endif()
 
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in

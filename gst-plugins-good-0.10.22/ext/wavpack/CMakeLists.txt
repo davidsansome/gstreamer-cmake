@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good wavpack WAVPACK_FOUND)
-if (${PLUGIN_wavpack_FOUND})
+if(PLUGIN_wavpack_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${WAVPACK_INCLUDE_DIRS})
@@ -25,4 +25,4 @@ if (${PLUGIN_wavpack_FOUND})
   )
 
   install_plugin(gstwavpack)
-endif (${PLUGIN_wavpack_FOUND})
+endif()

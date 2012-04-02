@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ffmpeg ffmpeg)
-if (${PLUGIN_ffmpeg_FOUND})
+if(PLUGIN_ffmpeg_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${ALSA_INCLUDE_DIRS})
@@ -36,4 +36,4 @@ if (${PLUGIN_ffmpeg_FOUND})
   )
 
   install_plugin(ffmpeg)
-endif (${PLUGIN_ffmpeg_FOUND})
+endif()

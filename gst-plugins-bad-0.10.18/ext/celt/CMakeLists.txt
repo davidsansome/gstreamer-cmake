@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad celt CELT_FOUND)
-if (${PLUGIN_celt_FOUND})
+if(PLUGIN_celt_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${CELT_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_celt_FOUND})
   )
 
   install_plugin(gstcelt)
-endif (${PLUGIN_celt_FOUND})
+endif()

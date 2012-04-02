@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good cairo CAIRO_FOUND)
-if (${PLUGIN_cairo_FOUND})
+if(PLUGIN_cairo_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${CAIRO_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_cairo_FOUND})
   )
 
   install_plugin(gstcairo)
-endif (${PLUGIN_cairo_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad metadata EXIF_FOUND IPTC_FOUND XMP_FOUND)
-if (${PLUGIN_metadata_FOUND})
+if(PLUGIN_metadata_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${EXIF_INCLUDE_DIRS})
@@ -38,4 +38,4 @@ if (${PLUGIN_metadata_FOUND})
   )
 
   install_plugin(gstmetadata)
-endif (${PLUGIN_metadata_FOUND})
+endif()

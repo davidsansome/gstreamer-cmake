@@ -402,10 +402,10 @@ set(SOURCES
 
 if(SPEEX_FOUND)
   list(APPEND SOURCES libspeexdec.c)
-endif(SPEEX_FOUND)
+endif()
 if(WINDOWS)
   list(APPEND SOURCES w32thread.c)
-endif(WINDOWS)
+endif()
 add_library(libavcodec SHARED ${SOURCES})
 target_link_libraries(libavcodec
   libavutil

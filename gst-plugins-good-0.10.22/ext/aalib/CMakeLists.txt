@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good aasink AALIB_LIBRARIES AALIB_INCLUDE_DIRS)
-if (${PLUGIN_aasink_FOUND})
+if(PLUGIN_aasink_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${AALIB_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_aasink_FOUND})
   )
 
   install_plugin(gstaasink)
-endif (${PLUGIN_aasink_FOUND})
+endif()

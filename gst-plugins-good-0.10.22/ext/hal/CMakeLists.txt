@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good halelements HAL_FOUND)
-if (${PLUGIN_halelements_FOUND})
+if(PLUGIN_halelements_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${HAL_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_halelements_FOUND})
   )
 
   install_plugin(gsthalelements)
-endif (${PLUGIN_halelements_FOUND})
+endif()

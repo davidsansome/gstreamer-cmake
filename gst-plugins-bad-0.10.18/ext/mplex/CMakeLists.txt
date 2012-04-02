@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad mplex _FOUND)
-if (${PLUGIN_mplex_FOUND})
+if(PLUGIN_mplex_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_mplex_FOUND})
   )
 
   install_plugin(gstmplex)
-endif (${PLUGIN_mplex_FOUND})
+endif()

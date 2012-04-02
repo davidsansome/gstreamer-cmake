@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad gsm GSM_LIBRARIES GSM_INCLUDE_DIRS)
-if (${PLUGIN_gsm_FOUND})
+if(PLUGIN_gsm_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${GSM_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_gsm_FOUND})
   )
 
   install_plugin(gstgsm)
-endif (${PLUGIN_gsm_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good pulse PULSE_FOUND)
-if (${PLUGIN_pulse_FOUND})
+if(PLUGIN_pulse_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${PULSE_INCLUDE_DIRS})
@@ -28,4 +28,4 @@ if (${PLUGIN_pulse_FOUND})
   )
 
   install_plugin(gstpulse)
-endif (${PLUGIN_pulse_FOUND})
+endif()

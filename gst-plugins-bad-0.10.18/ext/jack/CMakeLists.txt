@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad jack JACK_FOUND)
-if (${PLUGIN_jack_FOUND})
+if(PLUGIN_jack_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${JACK_INCLUDE_DIRS})
@@ -23,4 +23,4 @@ if (${PLUGIN_jack_FOUND})
   )
 
   install_plugin(gstjack)
-endif (${PLUGIN_jack_FOUND})
+endif()

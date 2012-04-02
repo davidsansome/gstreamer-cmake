@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ugly sid SIDPLAY_INCLUDE_DIRS SIDPLAY_INCLUDE_DIRS)
-if (${PLUGIN_sid_FOUND})
+if(PLUGIN_sid_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SIDPLAY_INCLUDE_DIRS})
@@ -19,4 +19,4 @@ if (${PLUGIN_sid_FOUND})
   )
 
   install_plugin(gstsid)
-endif (${PLUGIN_sid_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ugly a52dec A52_INCLUDE_DIRS A52_LIBRARIES)
-if (${PLUGIN_a52dec_FOUND})
+if(PLUGIN_a52dec_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${A52_INCLUDE_DIRS})
@@ -22,4 +22,4 @@ if (${PLUGIN_a52dec_FOUND})
   )
 
   install_plugin(gsta52dec)
-endif (${PLUGIN_a52dec_FOUND})
+endif()

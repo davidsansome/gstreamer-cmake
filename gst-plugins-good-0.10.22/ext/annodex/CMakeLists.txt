@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good annodex LIBXML_FOUND)
-if (${PLUGIN_annodex_FOUND})
+if(PLUGIN_annodex_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${LIBXML_INCLUDE_DIRS})
@@ -24,4 +24,4 @@ if (${PLUGIN_annodex_FOUND})
   )
 
   install_plugin(gstannodex)
-endif (${PLUGIN_annodex_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad schroedinger SCHRO_FOUND)
-if (${PLUGIN_schroedinger_FOUND})
+if(PLUGIN_schroedinger_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${SCHRO_INCLUDE_DIRS})
@@ -27,4 +27,4 @@ if (${PLUGIN_schroedinger_FOUND})
   )
 
   install_plugin(gstschroedinger)
-endif (${PLUGIN_schroedinger_FOUND})
+endif()

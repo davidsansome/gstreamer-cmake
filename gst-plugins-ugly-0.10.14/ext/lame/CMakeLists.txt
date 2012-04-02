@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(ugly lame LAME_INCLUDE_DIRS LAME_LIBRARIES)
-if (${PLUGIN_lame_FOUND})
+if(PLUGIN_lame_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${LAME_INCLUDE_DIRS})
@@ -21,4 +21,4 @@ if (${PLUGIN_lame_FOUND})
   )
 
   install_plugin(gstlame)
-endif (${PLUGIN_lame_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad nassink NAS_LIBRARIES NAS_INCLUDE_DIRS)
-if (${PLUGIN_nassink_FOUND})
+if(PLUGIN_nassink_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${NAS_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_nassink_FOUND})
   )
 
   install_plugin(nassink)
-endif (${PLUGIN_nassink_FOUND})
+endif()

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(bad faac FAAC_LIBRARIES FAAC_INCLUDE_DIRS)
-if (${PLUGIN_faac_FOUND})
+if(PLUGIN_faac_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${FAAC_INCLUDE_DIRS})
@@ -20,4 +20,4 @@ if (${PLUGIN_faac_FOUND})
   )
 
   install_plugin(gstfaac)
-endif (${PLUGIN_faac_FOUND})
+endif()

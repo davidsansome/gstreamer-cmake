@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 check_plugin_deps(good 1394 RAW1394_FOUND LIBIEC61883_FOUND AVC1394_FOUND)
-if (${PLUGIN_1394_FOUND})
+if(PLUGIN_1394_FOUND)
   include_directories(${CMAKE_CURRENT_SOURCE_DIR})
   include_directories(${CMAKE_CURRENT_BINARY_DIR})
   include_directories(${RAW1394_INCLUDE_DIRS})
@@ -30,4 +30,4 @@ if (${PLUGIN_1394_FOUND})
   )
 
   install_plugin(gst1394)
-endif (${PLUGIN_1394_FOUND})
+endif()

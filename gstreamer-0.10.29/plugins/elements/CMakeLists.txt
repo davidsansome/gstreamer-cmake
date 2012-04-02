@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 2.6)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-if (${HAVE_SYS_SOCKET_H})
+if(HAVE_SYS_SOCKET_H)
   set(GSTFDSRC gstfdsrc.c)
   set(GSTFDSINK gstfdsink.c)
-endif (${HAVE_SYS_SOCKET_H})
+endif()
 
 set(SOURCES
   gstcapsfilter.c
