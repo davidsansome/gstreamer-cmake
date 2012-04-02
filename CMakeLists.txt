@@ -15,6 +15,7 @@ set(GST_DISABLE_ALLOC 0 CACHE BOOL "Disable alloc")
 set(GST_DISABLE_REGISTRY 0 CACHE BOOL "Disable registry")
 set(GST_DISABLE_XML 0 CACHE BOOL "Disable xml")
 set(GST_DISABLE_PLUGIN 0 CACHE BOOL "Disable plugins")
+add_definitions(-DGST_USE_UNSTABLE_API)
 
 set(DEFAULT_AUDIOSINK "autoaudiosink" CACHE STRING "Default audio sink")
 set(DEFAULT_AUDIOSRC "alsasrc" CACHE STRING "Default audio source")
@@ -26,6 +27,7 @@ set(DEFAULT_VISUALISER "goom" CACHE STRING "Default visualiser")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake")
 include(GLibHelpers)
 include(GstMacros)
+include(Orcc)
 
 # Dependencies that are required by all packages
 include(FindPkgConfig)
@@ -51,7 +53,6 @@ find_package(FLEX)
 # Release mode
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
   add_definitions(-DNDEBUG)
-  add_definitions(-DQT_NO_DEBUG_OUTPUT)
 endif()
 
 # Useful variables for autotools compat.
@@ -66,7 +67,7 @@ set(PLUGINS_FOUND "" CACHE INTERNAL foo)
 set(PLUGINS_NOT_FOUND "" CACHE INTERNAL foo)
 
 add_subdirectory(gstreamer-0.11.3)
-#add_subdirectory(gst-plugins-base-0.10.29)
+add_subdirectory(gst-plugins-base-0.11.3)
 #add_subdirectory(gst-plugins-good-0.10.22)
 #add_subdirectory(gst-plugins-ugly-0.10.14)
 #add_subdirectory(gst-plugins-bad-0.10.18)
