@@ -71,6 +71,6 @@ add_subdirectory(gst-plugins-base-0.11.3)
 add_subdirectory(gst-plugins-good-0.11.2)
 #add_subdirectory(gst-plugins-ugly-0.10.14)
 #add_subdirectory(gst-plugins-bad-0.10.18)
-#add_subdirectory(gst-ffmpeg-0.10.10)
+add_subdirectory(gst-ffmpeg-0.11.2)
 
 show_plugin_summary()
