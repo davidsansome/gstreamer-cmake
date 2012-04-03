@@ -68,7 +68,7 @@ set(PLUGINS_NOT_FOUND "" CACHE INTERNAL foo)
 
 add_subdirectory(gstreamer-0.11.3)
 add_subdirectory(gst-plugins-base-0.11.3)
-#add_subdirectory(gst-plugins-good-0.10.22)
+add_subdirectory(gst-plugins-good-0.11.2)
 #add_subdirectory(gst-plugins-ugly-0.10.14)
 #add_subdirectory(gst-plugins-bad-0.10.18)
 #add_subdirectory(gst-ffmpeg-0.10.10)

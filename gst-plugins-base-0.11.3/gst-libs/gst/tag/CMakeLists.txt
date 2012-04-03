@@ -23,6 +23,7 @@ set(HEADERS
   tag.h
   gsttagdemux.h
   gsttagmux.h
+  xmpwriter.h
 )
 
 add_library(gsttag-${GST_MAJORMINOR} SHARED ${SOURCES})

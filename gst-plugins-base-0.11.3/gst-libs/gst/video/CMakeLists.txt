@@ -17,9 +17,15 @@ set(SOURCES
 )
 
 set(HEADERS
+  colorbalance.h
+  colorbalancechannel.h
   video.h
   gstvideosink.h
   gstvideofilter.h
+  gstvideometa.h
+  gstvideopool.h
+  videoorientation.h
+  videooverlay.h
 )
 
 set(GEN_HEADERS

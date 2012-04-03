@@ -25,7 +25,6 @@ set(HEADERS
   encoding-profile.h
   encoding-target.h
   gstdiscoverer.h
-  ${CMAKE_CURRENT_BINARY_DIR}/gstpluginsbaseversion.h
   pbutils.h
   descriptions.h
   install-plugins.h
@@ -34,6 +33,7 @@ set(HEADERS
 
 set(GEN_HEADERS
   pbutils-enumtypes.h
+  gstpluginsbaseversion.h
 )
 
 add_glib_marshal(SOURCES pbutils-marshal pbutils_marshal gst_private.h)

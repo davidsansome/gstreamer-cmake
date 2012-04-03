@@ -148,6 +148,7 @@ set(HEADERS
   gstutils.h
   gstvalue.h
   math-compat.h
+  gst_private.h
 )
 
 set(GEN_HEADERS

@@ -1,0 +1,90 @@
+cmake_minimum_required(VERSION 2.6)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+set(SOURCES
+  fnv1hash.c
+  gstrtpac3pay.c
+  gstasteriskh263.c
+  gstrtpg722depay.c
+  gstrtpg722pay.c
+  gstrtpgstdepay.c
+  gstrtpgstpay.c
+  gstrtpmparobustdepay.c
+  gstrtpqcelpdepay.c
+  gstrtp.c
+  gstrtpL16depay.c
+  gstrtpL16pay.c
+  gstrtpac3depay.c
+  gstrtpamrdepay.c
+  gstrtpamrpay.c
+  gstrtpbvdepay.c
+  gstrtpbvpay.c
+  gstrtpceltdepay.c
+  gstrtpceltpay.c
+  gstrtpchannels.c
+  gstrtpdvdepay.c
+  gstrtpdvpay.c
+  gstrtpg723depay.c
+  gstrtpg723pay.c
+  gstrtpg726depay.c
+  gstrtpg726pay.c
+  gstrtpg729depay.c
+  gstrtpg729pay.c
+  gstrtpgsmdepay.c
+  gstrtpgsmpay.c
+  gstrtph263depay.c
+  gstrtph263pay.c
+  gstrtph263pdepay.c
+  gstrtph263ppay.c
+  gstrtph264depay.c
+  gstrtph264pay.c
+  gstrtpilbcdepay.c
+  gstrtpilbcpay.c
+  gstrtpj2kdepay.c
+  gstrtpj2kpay.c
+  gstrtpjpegdepay.c
+  gstrtpjpegpay.c
+  gstrtpmp1sdepay.c
+  gstrtpmp2tdepay.c
+  gstrtpmp2tpay.c
+  gstrtpmp4adepay.c
+  gstrtpmp4apay.c
+  gstrtpmp4gdepay.c
+  gstrtpmp4gpay.c
+  gstrtpmp4vdepay.c
+  gstrtpmp4vpay.c
+  gstrtpmpadepay.c
+  gstrtpmpapay.c
+  gstrtpmpvdepay.c
+  gstrtpmpvpay.c
+  gstrtppcmadepay.c
+  gstrtppcmapay.c
+  gstrtppcmudepay.c
+  gstrtppcmupay.c
+  gstrtpqdmdepay.c
+  gstrtpsirendepay.c
+  gstrtpsirenpay.c
+  gstrtpspeexdepay.c
+  gstrtpspeexpay.c
+  gstrtpsv3vdepay.c
+  gstrtptheoradepay.c
+  gstrtptheorapay.c
+  gstrtpvorbisdepay.c
+  gstrtpvorbispay.c
+  gstrtpvrawdepay.c
+  gstrtpvrawpay.c
+)
+
+add_library(gstrtp MODULE ${SOURCES})
+
+target_link_libraries(gstrtp
+  gstbase-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
+  gsttag-${GST_MAJORMINOR}
+  gstrtp-${GST_MAJORMINOR}
+  ${GLIB_LIBRARIES}
+)
+
+install_plugin(gstrtp)
