@@ -12,6 +12,8 @@ add_library(gstflv MODULE ${SOURCES})
 
 target_link_libraries(gstflv
   gstbase-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
+  gstpbutils-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

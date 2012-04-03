@@ -15,7 +15,9 @@ add_library(gstmultifile MODULE ${SOURCES})
 
 target_link_libraries(gstmultifile
   gstbase-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gstmultifile)

@@ -20,7 +20,7 @@ target_link_libraries(gstvideoscale
   gstbase-${GST_MAJORMINOR}
   gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
-  ${LIBOIL_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstvideoscale)

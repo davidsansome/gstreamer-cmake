@@ -15,6 +15,7 @@ add_library(gstencodebin MODULE ${SOURCES})
 
 target_link_libraries(gstencodebin
   gstpbutils-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

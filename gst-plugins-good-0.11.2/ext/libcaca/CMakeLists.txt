@@ -14,6 +14,7 @@ if(PLUGIN_cacasink_FOUND)
 
   target_link_libraries(gstcacasink
     gstbase-${GST_MAJORMINOR}
+    gstvideo-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${CACA_LIBRARIES}
   )

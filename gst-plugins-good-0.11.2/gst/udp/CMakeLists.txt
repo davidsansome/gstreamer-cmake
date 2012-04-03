@@ -24,6 +24,7 @@ add_library(gstudp MODULE ${SOURCES})
 target_link_libraries(gstudp
   gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gstudp)

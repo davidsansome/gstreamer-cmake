@@ -19,6 +19,7 @@ if(PLUGIN_dv_FOUND)
   target_link_libraries(gstdv
     gstbase-${GST_MAJORMINOR}
     gstaudio-${GST_MAJORMINOR}
+    gstvideo-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${LIBDV_LIBRARIES}
   )

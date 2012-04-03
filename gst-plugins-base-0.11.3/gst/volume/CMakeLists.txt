@@ -17,7 +17,7 @@ target_link_libraries(gstvolume
   gstcontroller-${GST_MAJORMINOR}
   gstinterfaces-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
-  ${LIBOIL_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstvolume)

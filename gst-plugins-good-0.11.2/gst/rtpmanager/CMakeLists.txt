@@ -24,6 +24,7 @@ target_link_libraries(gstrtpmanager
   gstbase-${GST_MAJORMINOR}
   gstrtp-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gstrtpmanager)

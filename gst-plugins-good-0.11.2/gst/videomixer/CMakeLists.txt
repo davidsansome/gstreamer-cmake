@@ -17,7 +17,7 @@ target_link_libraries(gstvideomixer
   gstvideo-${GST_MAJORMINOR}
   gstcontroller-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
-  ${LIBOIL_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstvideomixer)

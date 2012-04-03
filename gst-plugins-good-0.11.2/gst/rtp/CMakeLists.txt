@@ -84,6 +84,8 @@ target_link_libraries(gstrtp
   gstaudio-${GST_MAJORMINOR}
   gsttag-${GST_MAJORMINOR}
   gstrtp-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
+  gstpbutils-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

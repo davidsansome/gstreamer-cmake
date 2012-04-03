@@ -14,8 +14,9 @@ add_library(gstvideotestsrc MODULE ${SOURCES})
 
 target_link_libraries(gstvideotestsrc
   gstbase-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
-  ${LIBOIL_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstvideotestsrc)

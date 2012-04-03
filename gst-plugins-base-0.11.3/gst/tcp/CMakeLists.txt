@@ -26,6 +26,7 @@ add_library(gsttcp MODULE ${SOURCES})
 target_link_libraries(gsttcp
   gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gsttcp)

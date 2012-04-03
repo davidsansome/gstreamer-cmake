@@ -11,6 +11,7 @@ add_library(gstauparse MODULE ${SOURCES})
 
 target_link_libraries(gstauparse
   gstbase-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

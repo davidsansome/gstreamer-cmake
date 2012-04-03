@@ -11,6 +11,7 @@ add_library(gsty4m MODULE ${SOURCES})
 
 target_link_libraries(gsty4m
   gstbase-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

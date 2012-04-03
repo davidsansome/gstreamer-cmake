@@ -15,6 +15,7 @@ target_link_libraries(gstvideoconvert
   gstvideo-${GST_MAJORMINOR}
   gstbase-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstvideoconvert)

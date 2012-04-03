@@ -14,6 +14,7 @@ if(PLUGIN_aasink_FOUND)
 
   target_link_libraries(gstaasink
     gstbase-${GST_MAJORMINOR}
+    gstvideo-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${AALIB_LIBRARIES}
   )

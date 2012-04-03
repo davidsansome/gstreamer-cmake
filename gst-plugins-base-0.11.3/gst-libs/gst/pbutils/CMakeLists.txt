@@ -10,14 +10,15 @@ configure_file(
 
 set(SOURCES
   codec-utils.c
+  descriptions.c
   encoding-profile.c
   encoding-target.c
+  gstdiscoverer-types.c
   gstdiscoverer.c
   gstpluginsbaseversion.c
-  pbutils.c
-  descriptions.c
   install-plugins.c
   missing-plugins.c
+  pbutils.c
 )
 
 set(HEADERS
@@ -44,6 +45,7 @@ add_library(gstpbutils-${GST_MAJORMINOR} SHARED ${SOURCES})
 
 target_link_libraries(gstpbutils-${GST_MAJORMINOR}
   gstreamer-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

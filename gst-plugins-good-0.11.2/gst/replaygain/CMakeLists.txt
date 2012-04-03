@@ -16,6 +16,8 @@ add_library(gstreplaygain MODULE ${SOURCES})
 target_link_libraries(gstreplaygain
   gstbase-${GST_MAJORMINOR}
   gstpbutils-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
+  gsttag-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

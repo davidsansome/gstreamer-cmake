@@ -17,7 +17,9 @@ add_library(gstaudioconvert MODULE ${SOURCES})
 target_link_libraries(gstaudioconvert
   gstbase-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
+  gsttag-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstaudioconvert)

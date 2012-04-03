@@ -22,6 +22,7 @@ find_path(CDPARANOIA_INCLUDE_DIRS cdda_paranoia.h)
 
 pkg_check_modules(ALSA alsa>=0.9.1)
 pkg_check_modules(LIBVISUAL libvisual-0.4>=0.4.0)
+pkg_check_modules(GIO gio-2.0>=2.22)
 pkg_check_modules(OGG ogg>=1.0)
 pkg_check_modules(ORC orc-0.4>=0.4.11)
 pkg_check_modules(PANGO pango>=1.22.0)

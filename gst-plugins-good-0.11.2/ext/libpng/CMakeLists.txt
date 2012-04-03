@@ -16,6 +16,7 @@ if(PLUGIN_png_FOUND)
 
   target_link_libraries(gstpng
     gstbase-${GST_MAJORMINOR}
+    gstvideo-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${PNG_LIBRARIES}
   )

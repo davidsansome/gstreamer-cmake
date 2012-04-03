@@ -23,6 +23,7 @@ target_link_libraries(gstmatroska
   gstriff-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
   gsttag-${GST_MAJORMINOR}
+  gstpbutils-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

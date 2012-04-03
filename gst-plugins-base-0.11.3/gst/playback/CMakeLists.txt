@@ -26,6 +26,7 @@ target_link_libraries(gstplayback
   gstpbutils-${GST_MAJORMINOR}
   gstvideo-${GST_MAJORMINOR}
   gstinterfaces-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

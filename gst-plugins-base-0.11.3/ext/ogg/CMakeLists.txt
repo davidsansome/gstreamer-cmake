@@ -22,6 +22,8 @@ if(PLUGIN_ogg_FOUND)
 
   target_link_libraries(gstogg
     gstbase-${GST_MAJORMINOR}
+    gsttag-${GST_MAJORMINOR}
+    gstriff-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${OGG_LIBRARIES}
   )

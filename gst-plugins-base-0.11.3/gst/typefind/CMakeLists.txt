@@ -11,6 +11,7 @@ add_library(gsttypefind MODULE ${SOURCES})
 
 target_link_libraries(gsttypefind
   gstbase-${GST_MAJORMINOR}
+  gstpbutils-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

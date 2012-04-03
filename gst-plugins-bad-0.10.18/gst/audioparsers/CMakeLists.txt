@@ -16,9 +16,10 @@ add_library(gstaudioparsersbad MODULE ${SOURCES})
 
 target_link_libraries(gstaudioparsersbad
   gstbase-${GST_MAJORMINOR}
-  gsttag-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
+  gsttag-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gstaudioparsersbad)

@@ -11,6 +11,7 @@ add_library(gstlevel MODULE ${SOURCES})
 
 target_link_libraries(gstlevel
   gstbase-${GST_MAJORMINOR}
+  gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

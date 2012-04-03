@@ -16,6 +16,7 @@ target_link_libraries(gstsdp
   gstrtp-${GST_MAJORMINOR}
   gstsdp-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${GIO_LIBRARIES}
 )
 
 install_plugin(gstsdp)

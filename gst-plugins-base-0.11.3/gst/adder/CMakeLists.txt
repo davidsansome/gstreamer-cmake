@@ -14,6 +14,7 @@ target_link_libraries(gstadder
   gstbase-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
+  ${ORC_LIBRARIES}
 )
 
 install_plugin(gstadder)

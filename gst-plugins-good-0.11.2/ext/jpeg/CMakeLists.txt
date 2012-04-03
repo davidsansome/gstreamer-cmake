@@ -16,6 +16,7 @@ if(PLUGIN_jpeg_FOUND)
 
   target_link_libraries(gstjpeg
     gstbase-${GST_MAJORMINOR}
+    gstvideo-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${JPEG_LIBRARIES}
   )

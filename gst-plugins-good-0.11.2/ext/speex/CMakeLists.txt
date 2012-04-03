@@ -17,6 +17,7 @@ if(PLUGIN_speex_FOUND)
   target_link_libraries(gstspeex
     gstbase-${GST_MAJORMINOR}
     gsttag-${GST_MAJORMINOR}
+    gstaudio-${GST_MAJORMINOR}
     ${GLIB_LIBRARIES}
     ${SPEEX_LIBRARIES}
   )

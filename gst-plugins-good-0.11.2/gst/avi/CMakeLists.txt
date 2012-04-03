@@ -17,6 +17,7 @@ target_link_libraries(gstavi
   gstriff-${GST_MAJORMINOR}
   gstaudio-${GST_MAJORMINOR}
   gsttag-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 

@@ -12,6 +12,7 @@ add_library(gstvideocrop MODULE ${SOURCES})
 
 target_link_libraries(gstvideocrop
   gstbase-${GST_MAJORMINOR}
+  gstvideo-${GST_MAJORMINOR}
   ${GLIB_LIBRARIES}
 )
 
